@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1593269574 source:c:\users\Оксана\documents\neuron\main.cpp
+	<iostream>
+
+1593337822 source:c:\users\ТохиВоу\desktop\neuron\main.cpp
+	<iostream>
+	<cmath>
+
