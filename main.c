@@ -13,18 +13,18 @@ void init(int arr[][30],int n){
     int kk=0;
     fprintf(fp1,"graph DZ2 {\n");
     for (int ii=0;ii<n;ii++) {
-        for (int jj=0;jj<n;jj++) {
-            for (int kj=0;kj<arr[ii][jj];kj++) {
-                fprintf(fp1,"\t%d -- %d;\n",ii,jj);
-            if (ii!=jj){
-                arr[jj][ii]--;
+    for (int jj=0;jj<n;jj++) {
+    for (int kj=0;kj<arr[ii][jj];kj++) {
+            fprintf(fp1,"\t%d -- %d;\n",ii,jj);
+         if (ii!=jj){
+            arr[jj][ii]--;
             }
         }
-            if (arr[ii][jj]!=0) {
-                kk++;
+         if (arr[ii][jj]!=0) {
+             kk++;
             }
         }
-            if (kk==0) {
+         if (kk==0) {
             fprintf(fp1,"\t%d;\n",ii);
         }
         kk=0;
@@ -44,8 +44,8 @@ int main(void){
     scanf("%d",&n);
     getchar();
     for (int i=0;i<n;i++){
-        for (int k=0;k<n;k++){
-            arr[i][k] = 0;
+    for (int k=0;k<n;k++){
+        arr[i][k] = 0;
         }
     }
     int wer;
@@ -66,8 +66,8 @@ int main(void){
     printf("\n");
     for (int ik=0;ik<n;ik++){
         //printf("| %d |",ik);
-        for (int ki=0;ki<n;ki++){
-            printf("| %d |",arr[ik][ki]);
+    for (int ki=0;ki<n;ki++){
+        printf("| %d |",arr[ik][ki]);
         }
         printf("\n");
     }
