@@ -7,15 +7,17 @@
    // }
 //}
 
-void init(int arr[][30],int n){
+int init(int arr[][30],int n){
     FILE *fp1;
     fp1=fopen("DZ2.dot", "w");
     int kk=0;
+    int count=0;
     fprintf(fp1,"graph DZ2 {\n");
     for (int ii=0;ii<n;ii++) {
     for (int jj=0;jj<n;jj++) {
     for (int kj=0;kj<arr[ii][jj];kj++) {
             fprintf(fp1,"\t%d -- %d;\n",ii,jj);
+            count++;
          if (ii!=jj){
             arr[jj][ii]--;
             }
@@ -33,6 +35,7 @@ void init(int arr[][30],int n){
     fclose(fp1);
 
     system("dot -Tpng DZ2.dot -oDZ2.png");
+    return count;
 }
 
 
@@ -40,6 +43,7 @@ void init(int arr[][30],int n){
 int main(void){
     int arr[30][30];
     int n;
+    int coun=0;
     printf("Enter number of vertices: ");
     scanf("%d",&n);
     getchar();
@@ -50,16 +54,15 @@ int main(void){
     }
     int wer;
     int ver;
-    //int rt=0;
     for (int t=0;t<n;t++){
         printf("\nHow many of vertices the vertex %d connects to: ",t);
         scanf("%d",&wer);
-    //if (wer>=2)
-        //rt++;
         printf("\nWhich vertices the vertex %d connects to: ",t);
     for (int te=0;te<wer;te++){
         scanf("%d",&ver);
         arr[t][ver]=1;
+        if (arr[ver][ver]==1)
+            coun++;
     }
     }
     //pri(n);
@@ -71,10 +74,10 @@ int main(void){
         }
         printf("\n");
     }
-    init(arr,n);
-    //if (rt<n-2)
-        //printf("Unconnected graph");
-    //else
-        //printf("Connected graph");
+    int rt=init(arr,n);
+    if ((rt>(((n-2)*(n-1))/2)) && (coun==0))
+        printf("Connected graph");
+    else
+        printf("Cannot check this graph");
     return 0;
 }
