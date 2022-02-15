@@ -12,7 +12,7 @@
 if (w.self != w.top) {
         return;
     }
-    if (/http:\/\/userscripts.org/.test(w.location.href)) {
+    if (/https:\/\/www.binance.com/ru/nft/mystery-box/.test(w.location.href)) {
        var interval = setInterval(function(){
 		if(window.grecaptcha){
 		grecaptcha.ready(function(){
