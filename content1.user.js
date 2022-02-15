@@ -1,18 +1,4 @@
-// ==UserScript==
-// @description Мой самый первый юзерскрипт 
-// @include https://www.binance.com/ru/nft/mystery-box/*
-// ==/UserScript==
-(function (window, undefined) {
-    var w;
-    if (typeof unsafeWindow != undefined) {
-        w = unsafeWindow
-    } else {
-        w = window;
-    }
-if (w.self != w.top) {
-        return;
-    }
-    if (/https:\/\/www.binance.com\/ru\/nft\/mystery-box/.test(w.location.href)) {
+
        var interval = setInterval(function(){
 		if(window.grecaptcha){
 		grecaptcha.ready(function(){
@@ -23,5 +9,3 @@ if (w.self != w.top) {
 	)})
 	}
 	},500)
-    }
-})(window);
